@@ -22,3 +22,13 @@ Options:
   --help                    Show this message and exit.
   
 ```
+
+Playing with parameters
+
+``` bash
+./mandelbrot.py --width 400 --height 300 --radius 2
+
+```
+
+
+![](docs/pics/radius2.png)
