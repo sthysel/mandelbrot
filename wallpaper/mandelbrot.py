@@ -1,18 +1,9 @@
-"""
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-A fast Mandelbrot set wallpaper renderer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#!/usr/bin/env python
 
-reddit discussion:
-    https://www.reddit.com/r/math/comments/2abwyt/smooth_colour_mandelbrot
-"""
-
+import click
 import numpy as np
 from PIL import Image
 from numba import jit
-
-MAXITERS = 200
-RADIUS = 100
 
 
 @jit
@@ -26,22 +17,34 @@ def color(z, i):
 
 
 @jit
-def iterate(c):
+def iterate(c, max_iters, radius):
     z = 0j
-    for i in range(MAXITERS):
-        if z.real * z.real + z.imag * z.imag > RADIUS:
+    for i in range(max_iters):
+        if z.real * z.real + z.imag * z.imag > radius:
             return color(z, i)
         z = z * z + c
     return 0, 0, 0
 
 
-def main(xmin, xmax, ymin, ymax, width, height):
+@click.command()
+@click.option('--xmin', default=-2.1, show_default=True)
+@click.option('--xmax', default=0.8, show_default=True)
+@click.option('--ymin', default=-1.16, show_default=True)
+@click.option('--ymax', default=1.16, show_default=True)
+@click.option('--width', default=1200, show_default=True)
+@click.option('--height', default=960, show_default=True)
+@click.option('--max-iterations', default=200, show_default=True)
+@click.option('--radius', default=100, show_default=True)
+@click.argument('filename', default='mandelbrot_wallpaper.png')
+def cli(xmin, xmax, ymin, ymax, width, height, max_iterations, radius, filename):
     y, x = np.ogrid[ymax: ymin: height * 1j, xmin: xmax: width * 1j]
     z = x + y * 1j
-    red, green, blue = np.asarray(np.frompyfunc(iterate, 1, 3)(z)).astype(np.float)
+    red, green, blue = np.asarray(np.frompyfunc(iterate, 3, 3)(z, max_iterations, radius)).astype(np.float)
     img = np.dstack((red, green, blue))
-    Image.fromarray(np.uint8(img * 255)).save('mandelbrot.png')
+
+    click.echo('Writing to ' + filename)
+    Image.fromarray(np.uint8(img * 255)).save(filename)
 
 
 if __name__ == '__main__':
-    main(-2.1, 0.8, -1.16, 1.16, 1200, 960)
+    cli()
