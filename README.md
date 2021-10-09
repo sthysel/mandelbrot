@@ -1,6 +1,6 @@
 # mandelbrot
 
-![](docs/pics/mandelbrot_wallpaper.png)
+![Mandelbrot](docs/pics/mandelbrot_wallpaper.png)
 
 Collection of Mandelbrot things
 
