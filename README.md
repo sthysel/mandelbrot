@@ -2,7 +2,7 @@
 
 ![Mandelbrot](docs/pics/mandelbrot_wallpaper.png)
 
-Mandelbrot wallpaper generator.
+A fast Mandelbrot fractal wallpaper generator. 
 
 ## Usage
 
@@ -24,7 +24,14 @@ Options:
   --help                    Show this message and exit.
 ```
 
-![](docs/pics/radius2.png)
+![Radius](docs/pics/radius2.png)
+
+
+## Install
+
+```zsh
+$ poetry install
+```
 
 ## A fast Mandelbrot set wallpaper renderer
 
