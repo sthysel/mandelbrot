@@ -2,7 +2,7 @@
 
 ![Mandelbrot](docs/pics/mandelbrot_wallpaper.png)
 
-A fast Mandelbrot fractal wallpaper generator. 
+A fast Mandelbrot fractal wallpaper generator.
 
 ## Usage
 

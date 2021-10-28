@@ -27,14 +27,14 @@ for y in range(height):
         if i < imax - 1:
             v = log(i + 1.5 - log(log(abs(z)), 2)) / 3.4
             if v < 1.0:
-                red = v**4
-                green = v**2.5
+                red = v ** 4
+                green = v ** 2.5
                 blue = v  # blue
             else:
                 v = max(0.0, 2.0 - v)
                 red = v
-                green = v**1.5
-                blue = v**3  # sepia
+                green = v ** 1.5
+                blue = v ** 3  # sepia
             screen.set_at((x, y), (red * 255, green * 255, blue * 255))
 
 while pygame.event.wait().type != pygame.QUIT:

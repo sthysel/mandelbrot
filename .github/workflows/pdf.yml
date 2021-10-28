@@ -21,7 +21,7 @@ jobs:
       - name: Convert to pdf
         uses: docker://pandoc/latex:2.14.2
         with:
-          args: >- 
+          args: >-
             --output=output/gtf-${{ steps.release_version.outputs.release_version }}.pdf
             ${{ steps.files_list.outputs.files }}
       - uses: actions/upload-artifact@v2.2.4
