@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mandelbrot"
-version = "0.0.1"
+version = "0.1.0"
 description = "Creates Mandelbrot wallpapers"
 authors = ["sthysel <sthysel@gmail.com>"]
 license = "MIT"
