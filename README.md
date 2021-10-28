@@ -1,14 +1,16 @@
-# mandelbrot
+# Mandelbrot (Version 0.0.1)
 
 ![Mandelbrot](docs/pics/mandelbrot_wallpaper.png)
 
-Collection of Mandelbrot things
+Mandelbrot wallpaper generator.
 
-## Walpaper generator
+## Usage
 
-```bash
-./mandelbrot.py --help
-Usage: mandelbrot.py [OPTIONS] [FILENAME]
+```zsh
+
+Usage: mandelbrot [OPTIONS] [FILENAME]
+
+  Generate a Mandelbrot fractal image using the specified parameters.
 
 Options:
   --xmin FLOAT              [default: -2.1]
@@ -20,15 +22,11 @@ Options:
   --max-iterations INTEGER  [default: 200]
   --radius INTEGER          [default: 100]
   --help                    Show this message and exit.
-  
 ```
-
-Playing with parameters
-
-``` bash
-./mandelbrot.py --width 400 --height 300 --radius 2
-
-```
-
 
 ![](docs/pics/radius2.png)
+
+## A fast Mandelbrot set wallpaper renderer
+
+- https://www.reddit.com/r/math/comments/2abwyt/smooth_colour_mandelbrot
+- https://github.com/neozhaoliang/pywonderland
