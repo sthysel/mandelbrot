@@ -40,10 +40,29 @@ def iterate(c, max_iters, radius):
     default=-1.16,
     show_default=True,
 )
-@click.option("--ymax", default=1.16, show_default=True)
-@click.option("--width", default=1200, show_default=True)
-@click.option("--height", default=960, show_default=True)
-@click.option("--max-iterations", default=200, show_default=True)
+@click.option(
+    "--ymax",
+    default=1.16,
+    show_default=True,
+)
+@click.option(
+    "--width",
+    default=1200,
+    show_default=True,
+    help="Image width",
+)
+@click.option(
+    "--height",
+    default=960,
+    show_default=True,
+    help="Image height",
+)
+@click.option(
+    "--max-iterations",
+    default=200,
+    show_default=True,
+    help="Maximum number of iterations",
+)
 @click.option("--radius", default=100, show_default=True)
 @click.argument("filename", default="wallpaper.png")
 def cli(xmin, xmax, ymin, ymax, width, height, max_iterations, radius, filename):
