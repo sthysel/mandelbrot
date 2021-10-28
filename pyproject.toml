@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "mandelbrot"
+version = "0.0.1"
+description = "Creates Mandelbrot wallpapers"
+authors = ["sthysel <sthysel@gmail.com>"]
+license = "MIT"
+
+packages = [
+    { include = "wallpaper", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.10"
+click = "^8.0.3"
+numba = "^0.54.1"
+Pillow = "^8.4.0"
+llvmlite = "^0.37.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+pre-commit = "^2.15.0"
+flake8 = "^4.0.1"
+mypy = "^0.910"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+mandelbrot = "wallpaper.mandelbrot:cli"
