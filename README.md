@@ -1,4 +1,4 @@
-# Mandelbrot (Version 0.1.0)
+# Mandelbrot (Version 1.0.0)
 
 ![Mandelbrot](docs/pics/mandelbrot_wallpaper.png)
 
