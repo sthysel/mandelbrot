@@ -4,7 +4,7 @@
 #   pre-commit autoupdate
 repos:
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.0.1
+  rev: v5.0.0
   hooks:
   - id: check-ast
   - id: check-byte-order-marker
@@ -20,19 +20,19 @@ repos:
   - id: check-merge-conflict
 
 - repo: https://github.com/pre-commit/mirrors-mypy
-  rev: v0.910-1
+  rev: v1.12.1
   hooks:
   - id: mypy
     args: [--ignore-missing-imports]
     additional_dependencies: [types-setuptools]
 
 - repo: https://github.com/psf/black
-  rev: 21.9b0
+  rev: 24.10.0
   hooks:
   - id: black
 
 - repo: https://github.com/asottile/pyupgrade
-  rev: v2.29.0
+  rev: v3.18.0
   hooks:
   - id: pyupgrade
     args: [--py36-plus]
